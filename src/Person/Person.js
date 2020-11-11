@@ -1,7 +1,15 @@
 import React from "react";
-
-const person = () => {
-  return <p>I am a person and my {Math.floor(Math.random() * 30)} age </p>;
+import "./Person.css";
+const person = (props) => {
+  return (
+    <div className="Person">
+      <p onClick={props.click}>
+        I am {props.name} and my age is {props.age}{" "}
+      </p>
+      <p>{props.children}</p>
+      <input type="text" onChange={props.changed} />
+    </div>
+  );
 };
 
 export default person;
